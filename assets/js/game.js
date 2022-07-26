@@ -13,12 +13,12 @@ let words = [
    },
 
    word2 = {
-    name : "GARRAFA",
+    name : "RADIO",
     tip  : "Objeto"
    },
 
    word3 = {
-    name : "GARRAFA",
+    name : "CADEIRA",
     tip  : "Objeto"
    },
 
@@ -33,17 +33,17 @@ let words = [
    },
 
    word6 = {
-    name : "GARRAFA",
+    name : "MOUSE",
     tip  : "Objeto"
    },
 
    word7 = {
-    name : "GARRAFA",
+    name : "PENDRIVE",
     tip  : "Objeto"
    },
 
    word8 = {
-    name : "GARRAFA",
+    name : "IMPRESSORA",
     tip  : "Objeto"
    },
 
@@ -55,7 +55,7 @@ let words = [
    },
 
    word10 = {
-    name : "GARRAFA",
+    name : "GROELANDIA",
     tip  : "País"
    },
 
@@ -77,7 +77,27 @@ let words = [
    word14 = {
     name : "RUSSIA",
     tip  : "País"
-   }
+   },
+
+   word15 = {
+    name : "LASANHA",
+    tip  : "COMIDA"
+   },
+
+   word16 = {
+    name : "ESTROGONOFE",
+    tip  : "COMIDA"
+   },
+
+   word17 = {
+    name : "MACARRONADA",
+    tip  : "COMIDA"
+   },
+
+   word18 = {
+    name : "ARROZDOCE",
+    tip  : "COMIDA"
+   },
 
 ];
  
@@ -118,9 +138,12 @@ function getLetterChoose(letter){
 // trazendo uma palavra aleatoria
 randomWord();
 function randomWord(){
-    const randomWord = Math.ceil(Math.random()* words.length -1); 
+    const randomWord = Math.ceil(Math.random()* words.length -1);  
     secretWord = words[randomWord].name;
     secretTip = words[randomWord].tip; 
+    
+
+    console.log(secretWord);
 }
 
 mountWord();
@@ -142,6 +165,7 @@ function mountWord(){
             wordSecret.innerHTML = wordSecret.innerHTML + "<div class='letter'>" +listDinamic[i]+ "</div>"; 
         }
     }
+ 
 } 
 
 //  thisLetterExist('a');
