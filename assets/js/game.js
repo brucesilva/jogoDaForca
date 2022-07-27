@@ -112,9 +112,10 @@ function getLetterChoose(letter){
     
     document.querySelector('.tecla-'+letter).disabled = true;
     // aqui se ela tiver vida, eu pego a tecla e mudo ela de cor
+    // aqui é quando a pessoa acerta a tecla
     if(life > 0){
         let letterChoose = document.querySelector('.tecla-'+letter);
-        letterChoose.style.backgroundColor = '#C71585';
+        letterChoose.style.backgroundColor = 'green';
         letterChoose.style.color = '#fff'; 
 
         // bloquear a tecla para o usuário não conseguir mais clicar nela
@@ -127,6 +128,7 @@ function getLetterChoose(letter){
         //  função que monta as palavra na tela
          mountWord();
     }else{
+         
         // alert("Você perdeu o jogo aaaa");
         // // life = 6; 
         // loadImage(life);
@@ -180,6 +182,11 @@ function thisLetterExist(letter){
         if(life == 0){
             callModal('Sorry, you lost', "Try Again, the Word was "+secretWord)
            
+            // aqui é quando a pessoa erra a tecla
+        }else{
+            let letterChoose = document.querySelector('.tecla-'+letter);
+            letterChoose.style.backgroundColor = 'red';
+            letterChoose.style.color = '#fff'; 
         }
         // função para verificar as vidas e colocar o desenho da forca correto
         loadImage(life); 
